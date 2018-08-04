@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <classPathEntry
+            location="/Library/Java/mysql-connector-java-8.0.11/mysql-connector-java-8.0.11.jar" />
+    <context id="context1" targetRuntime="MyBatis3">
+        <!-- 序列化pojo -->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+        <commentGenerator>
+            <property name="suppressDate" value="true" />
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/movie1?characterEncoding=utf-8"
+                        userId="root" password="shuang960212" />
+
+        <!-- 指定javaBean生成的位置 -->
+        <javaModelGenerator targetPackage="com.yrr.bean"
+                            targetProject="src/main/java" >
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <!--指定sql映射文件生成的位置 -->
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="src/main/resources" >
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="com.yrr.dao"
+                             targetProject="src/main/java" type="XMLMAPPER" >
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <table schema="movie1" tableName="user_admin" domainObjectName="User">
+            <!-- 实体类中的成员变量和表的列明一一对应 -->
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table schema="movie1" tableName="movie" domainObjectName="Movie">
+            <!-- 实体类中的成员变量和表的列明一一对应 -->
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+        <table schema="movie1" tableName="type" domainObjectName="Type">
+            <!-- 实体类中的成员变量和表的列明一一对应 -->
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+    </context>
+</generatorConfiguration>
