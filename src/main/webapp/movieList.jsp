@@ -1,6 +1,6 @@
 <%@page language="java" contentType="text/html; chatset=UTF-8"
-    pageEncoding="UTF-8" %>
- <%--
+        pageEncoding="UTF-8" %>
+<%--
 <jsp:forward page="/login"></jsp:forward>
 --%>
 <%
@@ -108,7 +108,7 @@
                         <a href="${APP_PATH}/login">主页</a>
                     </li>
                     <li class="active">
-                        <a href="${APP_PATH}/movieList.jsp">电影列表</a>
+                        <a href="${APP_PATH}/movies">电影列表</a>
                     </li>
 
                 </ol>
